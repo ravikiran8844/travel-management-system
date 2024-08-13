@@ -4,8 +4,9 @@
   font-size: 14px;
 }
 .text-black {
-  color: #000;
+  color: #000 !important;
 }
+
 /* login page */
 .login-page_wrapper {
   background: #fff;
@@ -1051,6 +1052,8 @@ background: #FFF;
 .tms-table thead{
   border-radius: 8px 8px 0px 0px;
   background: #F1F2F6;
+  position: sticky;
+  top: 0;
 }
 .tms-table th,.tms-table td{
   color: #2D2D2D;
