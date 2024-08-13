@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+ .modal
+{
+    display: none;
+    height: 50vh;
+    width: 50vw;
+    margin-left: 25vw;
+    background-color: silver;
+}
+
+.modal.visible
+{
+    display: blocK;
+}
+    </style>
+</head>
+<body>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+
+    <h1 style="color: green">
+        GeeksforGeeks
+    </h1>
+     
+    <b>Detect browser or tab closing</b>
+     
+    <p>
+        The beforeunload function is triggered
+        just before the browser or tab is to be
+        closed or the page is to be reloaded.
+        Modern browsers require some interaction
+        with the page, otherwise the dialog box
+        is not shown.
+    </p>
+     
+    <form>
+       
+
+        <script>
+            const body = document.querySelector('body');
+            let mouseY;
+
+            body.addEventListener('mouseleave', (event) => {
+            mouseY = event.clientY;
+            if (mouseY < 0) {
+                body.classList.add("delayed-survey");
+                alert('Exit Intent');
+                // add additional code for exit intent here
+            }
+});
+        </script>
+</body>
+</html>

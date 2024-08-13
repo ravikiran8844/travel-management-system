@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.svg"
+      type="image/x-icon"
+    />
+    <title>Bulk Add Expenses | Emerald TMS</title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/lineicons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/materialdesignicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="../assets/css/fullcalendar.css" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"
+    />
+  </head>
+  <body>
+    <!-- ======== Preloader =========== -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+    <!-- ======== Preloader =========== -->
+
+    <!-- ======== sidebar-nav start =========== -->
+    <aside class="sidebar-nav-wrapper">
+      <div class="navbar-logo">
+        <a href="index.html">
+          <img src="../assets/images/logo/logo.svg" alt="logo" />
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="nav-item">
+            <a href="index.html">
+              <span class="icon">
+                <svg
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>view-grid</title>
+                  <path
+                    d="M3,11H11V3H3M3,21H11V13H3M13,21H21V13H13M13,3V11H21V3"
+                  />
+                </svg>
+              </span>
+              <span class="text">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_1"
+              aria-controls="ddmenu_1"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>briefcase-outline</title>
+                  <path
+                    d="M20,6C20.58,6 21.05,6.2 21.42,6.59C21.8,7 22,7.45 22,8V19C22,19.55 21.8,20 21.42,20.41C21.05,20.8 20.58,21 20,21H4C3.42,21 2.95,20.8 2.58,20.41C2.2,20 2,19.55 2,19V8C2,7.45 2.2,7 2.58,6.59C2.95,6.2 3.42,6 4,6H8V4C8,3.42 8.2,2.95 8.58,2.58C8.95,2.2 9.42,2 10,2H14C14.58,2 15.05,2.2 15.42,2.58C15.8,2.95 16,3.42 16,4V6H20M4,8V19H20V8H4M14,6V4H10V6H14Z"
+                  />
+                </svg>
+              </span>
+              <span class="text">Trips</span>
+            </a>
+            <ul id="ddmenu_1" class="collapse dropdown-nav">
+              <li>
+                <a href="/user/new-trips.html"> New Trips </a>
+              </li>
+              <li>
+                <a href="/user/pending-trips.html"> Pending Trips </a>
+              </li>
+              <li>
+                <a href="/user/all-trips.html"> All Trips </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-item-has-children">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_2"
+              aria-controls="ddmenu_2"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>text-box-check-outline</title>
+                  <path
+                    d="M17,21L14.25,18L15.41,16.84L17,18.43L20.59,14.84L21.75,16.25M12.8,21H5C3.89,21 3,20.11 3,19V5C3,3.89 3.89,3 5,3H19C20.11,3 21,3.89 21,5V12.8C20.39,12.45 19.72,12.2 19,12.08V5H5V19H12.08C12.2,19.72 12.45,20.39 12.8,21M12,17H7V15H12M14.68,13H7V11H17V12.08C16.15,12.22 15.37,12.54 14.68,13M17,9H7V7H17"
+                  />
+                </svg>
+              </span>
+              <span class="text">Expenses</span>
+            </a>
+            <ul id="ddmenu_2" class="collapse dropdown-nav">
+              <li>
+                <a href="/user/unreported-expenses.html">
+                  Unreported Expenses
+                </a>
+              </li>
+              <li>
+                <a href="/user/all-expenses.html"> All Expenses </a>
+              </li>
+              <li>
+                <a href="/user/bulk-add-expenses.html"> Bulk Add Expenses </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-item-has-children active">
+            <a
+              href="#0"
+              class="collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#ddmenu_3"
+              aria-controls="ddmenu_3"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="icon">
+                <svg
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>text-box-check-outline</title>
+                  <path
+                    d="M17,21L14.25,18L15.41,16.84L17,18.43L20.59,14.84L21.75,16.25M12.8,21H5C3.89,21 3,20.11 3,19V5C3,3.89 3.89,3 5,3H19C20.11,3 21,3.89 21,5V12.8C20.39,12.45 19.72,12.2 19,12.08V5H5V19H12.08C12.2,19.72 12.45,20.39 12.8,21M12,17H7V15H12M14.68,13H7V11H17V12.08C16.15,12.22 15.37,12.54 14.68,13M17,9H7V7H17"
+                  />
+                </svg>
+              </span>
+              <span class="text">Advances</span>
+            </a>
+            <ul id="ddmenu_3" class="collapse dropdown-nav">
+              <li>
+                <a class="active" href="/user/all-advances.html">
+                  All Advance
+                </a>
+              </li>
+              <li>
+                <a href="/user/pending-advances.html"> Pending Advances </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="settings.html">
+              <span class="icon">
+                <svg
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>cog</title>
+                  <path
+                    d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+                  />
+                </svg>
+              </span>
+              <span class="text">Settings</span>
+            </a>
+          </li>
+
+          <span class="divider"><hr /></span>
+
+          <li class="nav-item">
+            <a href="login.html">
+              <span class="icon">
+                <svg
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>logout</title>
+                  <path
+                    d="M17 8L15.6 9.4L17.2 11H9V13H17.2L15.6 14.6L17 16L21 12L17 8M5 5H12V3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H12V19H5V5Z"
+                  />
+                </svg>
+              </span>
+              <span class="text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
+
+    <!-- ======== main-wrapper start =========== -->
+    <main class="main-wrapper">
+      <!-- ========== header start ========== -->
+      <header class="header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-5 col-md-5 col-6">
+              <div class="header-left d-flex align-items-center">
+                <div class="menu-toggle-btn mr-15">
+                  <button
+                    id="menu-toggle"
+                    class="main-btn primary-btn btn-hover"
+                  >
+                    <i class="lni lni-chevron-left"></i>
+                  </button>
+                </div>
+                <div class="header-search d-none d-lg-flex">
+                  <form action="#">
+                    <input type="text" placeholder="Search Reports Approval" />
+                    <button><i class="lni lni-search-alt"></i></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-6">
+              <div class="header-right">
+                <!-- message start -->
+                <div class="header-message-box ml-15 d-none d-md-flex">
+                  <button
+                    class="dropdown-toggle"
+                    type="button"
+                    id="message"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <svg
+                      width="22"
+                      height="22"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <title>message-outline</title>
+                      <path
+                        d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M20 16H5.2L4 17.2V4H20V16Z"
+                      />
+                    </svg>
+                    <span>3</span>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="message"
+                  >
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="../assets/images/lead/lead-5.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Jacob Jones</h6>
+                          <p>Hey!I can across your profile and ...</p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="../assets/images/lead/lead-3.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>John Doe</h6>
+                          <p>Would you mind please checking out</p>
+                          <span>12 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="../assets/images/lead/lead-2.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>Anee Lee</h6>
+                          <p>Hey! are you available for freelance?</p>
+                          <span>1h ago</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- message end -->
+
+                <!-- notification start -->
+                <div class="notification-box d-none d-md-flex">
+                  <button
+                    class="dropdown-toggle"
+                    type="button"
+                    id="notification"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <svg
+                      width="22"
+                      height="22"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                    >
+                      <title>bell-outline</title>
+                      <path
+                        d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z"
+                      />
+                    </svg>
+                    <span>2</span>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="notification"
+                  >
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="../assets/images/lead/lead-6.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>
+                            John Doe
+                            <span class="text-regular">
+                              comment on a product.
+                            </span>
+                          </h6>
+                          <p>
+                            Lorem ipsum dolor sit amet, consect etur adipiscing
+                            elit Vivamus tortor.
+                          </p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <div class="image">
+                          <img src="../assets/images/lead/lead-1.png" alt="" />
+                        </div>
+                        <div class="content">
+                          <h6>
+                            Jonathon
+                            <span class="text-regular">
+                              like on a product.
+                            </span>
+                          </h6>
+                          <p>
+                            Lorem ipsum dolor sit amet, consect etur adipiscing
+                            elit Vivamus tortor.
+                          </p>
+                          <span>10 mins ago</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- notification end -->
+
+                <div
+                  class="align-self-center ml-15 header-border d-none d-md-flex"
+                >
+                  <div class="header_company-name">
+                    Company name
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="6"
+                        height="10"
+                        viewBox="0 0 6 10"
+                        fill="none"
+                      >
+                        <path
+                          d="M5.64055 5.91202C5.75049 5.81567 5.8412 5.68135 5.90409 5.52177C5.96699 5.36218 6 5.1826 6 5C6 4.8174 5.96699 4.63782 5.90409 4.47823C5.8412 4.31865 5.75049 4.18433 5.64055 4.08798L1.16739 0.162835C1.05208 0.0615387 0.919721 0.00545975 0.78394 0.000379528C0.648159 -0.00469974 0.513875 0.0414037 0.39493 0.133937C0.275986 0.22647 0.176685 0.362085 0.107265 0.526802C0.0378447 0.691518 0.000817343 0.879375 -3.90299e-07 1.07101L-4.68151e-08 8.929C0.000817703 9.12063 0.0378451 9.30848 0.107265 9.4732C0.176685 9.63792 0.275986 9.77353 0.394931 9.86606C0.513875 9.9586 0.64816 10.0047 0.78394 9.99962C0.919721 9.99454 1.05208 9.93846 1.16739 9.83717L5.64055 5.91202Z"
+                          fill="#313131"
+                        />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <!-- profile start -->
+                <div class="profile-box ml-15">
+                  <button
+                    class="dropdown-toggle bg-transparent border-0"
+                    type="button"
+                    id="profile"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <div class="profile-info">
+                      <div class="info">
+                        <div class="image">
+                          <img
+                            src="../assets/images/profile/profile-image.png"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <h6 class="fw-semibold">Vishnu prasath</h6>
+                          <p>Admin</p>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                  <ul
+                    class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="profile"
+                  >
+                    <li>
+                      <div class="author-info flex items-center !p-1">
+                        <div class="image">
+                          <img
+                            src="../assets/images/profile/profile-image.png"
+                            alt="image"
+                          />
+                        </div>
+                        <div class="content">
+                          <h4 class="text-sm">Vishnu prasath</h4>
+                          <a
+                            class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                            href="#"
+                            >email@gmail.com</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-user"></i> View Profile
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0">
+                        <i class="lni lni-alarm"></i> Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-inbox"></i> Messages </a>
+                    </li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#0"> <i class="lni lni-exit"></i> Sign Out </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- profile end -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ========== header end ========== -->
+
+      <!-- ========== section start ========== -->
+      <section class="section">
+        <div class="container-fluid">
+          <!-- ========== title-wrapper start ========== -->
+          <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+              <div
+                class="col-12 d-flex justify-content-between align-items-center flex-wrap"
+              >
+                <div
+                  class="title me-3 mb-4 d-flex flex-wrap gap-4 align-items-center"
+                >
+                  <h2>Bulk Add Expenses</h2>
+
+                  <div>
+                    <input class="d-none" id="attach-file" type="file" />
+                    <label class="attach-file-label" for="attach-file">
+                      <span class="me-1">
+                        <svg
+                          width="7"
+                          height="16"
+                          viewBox="0 0 7 16"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.49997 0C1.57108 0 0 1.57656 0 3.5122V13.4634C0 14.8586 1.13747 16 2.52776 16C3.91804 16 5.05551 14.8586 5.05551 13.4634V3.5122C5.05551 2.65754 4.35165 1.95122 3.49997 1.95122C2.64829 1.95122 1.94443 2.65754 1.94443 3.5122V12.0976C1.94334 12.1751 1.95762 12.2521 1.98644 12.3241C2.01526 12.3961 2.05806 12.4616 2.11233 12.5169C2.16661 12.5721 2.23128 12.616 2.3026 12.6459C2.37392 12.6759 2.45045 12.6913 2.52776 12.6913C2.60506 12.6913 2.6816 12.6759 2.75291 12.6459C2.82423 12.616 2.8889 12.5721 2.94318 12.5169C2.99746 12.4616 3.04025 12.3961 3.06907 12.3241C3.0979 12.2521 3.11218 12.1751 3.11109 12.0976V3.5122C3.11109 3.28588 3.27444 3.12195 3.49997 3.12195C3.72551 3.12195 3.88886 3.28588 3.88886 3.5122V13.4634C3.88886 14.2302 3.2919 14.8293 2.52776 14.8293C1.76362 14.8293 1.16666 14.2302 1.16666 13.4634V3.5122C1.16666 2.2049 2.19722 1.17073 3.49997 1.17073C4.80272 1.17073 5.83329 2.2049 5.83329 3.5122V12.4878C5.83219 12.5654 5.84647 12.6424 5.8753 12.7144C5.90412 12.7863 5.94691 12.8519 6.00119 12.9071C6.05547 12.9623 6.12014 13.0062 6.19146 13.0362C6.26277 13.0661 6.33931 13.0815 6.41661 13.0815C6.49392 13.0815 6.57045 13.0661 6.64177 13.0362C6.71309 13.0062 6.77776 12.9623 6.83204 12.9071C6.88631 12.8519 6.92911 12.7863 6.95793 12.7144C6.98676 12.6424 7.00104 12.5654 6.99994 12.4878V3.5122C6.99994 1.57656 5.42886 0 3.49997 0Z"
+                            fill="#F78D1E"
+                          />
+                        </svg>
+                      </span>
+                      Attach File</label
+                    >
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="text-blue">Approver</div>
+                    <div class="d-flex align-items-center">
+                      <div class="image">
+                        <img
+                          width="24"
+                          height="24"
+                          src="../assets/images/profile/profile-image.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="approver-name">Vinoth Kumar</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+
+          <div class="col-12">
+            <div class="d-flex flex-wrap gap-4">
+              <div>
+                <select class="country-select-box" name="" id="">
+                  <option value="">London</option>
+                </select>
+              </div>
+
+              <div>
+                <div class="date-range_wrapper">
+                  <label for="">Date</label>
+                  <input type="text" name="daterange" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 mt-5">
+            <div class="table-wrapper table-responsive bulk-add-expenses-table">
+              <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th class="text-orange">EXPENSE DATE*</th>
+                    <th>Merchant</th>
+                    <th class="text-orange">CATEGORY*</th>
+                    <th class="text-orange">AMOUNT*</th>
+                    <th>REIMBURSABLE</th>
+                    <th>Description</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="row-count">1</div>
+                    </td>
+                    <td>
+                      <input class="d-none" id="row1-file" type="file" />
+                      <label class="add-file-icon" for="row1-file">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M6 0C5.49022 0 5.07692 0.413277 5.07692 0.923077V5.07694H0.923077C0.413277 5.07694 0 5.4902 0 6.00002C0 6.5098 0.413277 6.9231 0.923077 6.9231H5.07692V11.0769C5.07692 11.5867 5.49022 12 6 12C6.50982 12 6.92308 11.5867 6.92308 11.0769V6.9231H11.0769C11.5867 6.9231 12 6.5098 12 6.00002C12 5.4902 11.5867 5.07694 11.0769 5.07694H6.92308V0.923077C6.92308 0.413277 6.50982 0 6 0Z"
+                            fill="#6C6C6C"
+                          />
+                        </svg>
+                      </label>
+                    </td>
+
+                    <td>
+                      <input type="date" />
+                    </td>
+                    <td>
+                      <select name="" id="">
+                        <option value="">Select</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="" id="">
+                        <option value="">Select</option>
+                      </select>
+                    </td>
+                    <td>
+                      <div class="d-flex justify-content-center">
+                        <div>
+                          <select name="" id="">
+                            <option value="">INR</option>
+                          </select>
+                        </div>
+                        <div>
+                          <input type="number" placeholder="0.00" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        class="custom-checkbox"
+                        type="checkbox"
+                        id="checkbox-1"
+                      />
+                    </td>
+                    <td></td>
+                    <td>
+                      <button class="btn bg-transparent">
+                        <svg
+                          width="15"
+                          height="18"
+                          viewBox="0 0 15 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.625 13.9167C5.45924 13.9167 5.30027 13.8509 5.18306 13.7337C5.06585 13.6165 5 13.4575 5 13.2917V7.04175C5 6.87599 5.06585 6.71702 5.18306 6.59981C5.30027 6.4826 5.45924 6.41675 5.625 6.41675C5.79076 6.41675 5.94973 6.4826 6.06694 6.59981C6.18415 6.71702 6.25 6.87599 6.25 7.04175V13.2917C6.25 13.4575 6.18415 13.6165 6.06694 13.7337C5.94973 13.8509 5.79076 13.9167 5.625 13.9167ZM10 13.2917V7.04175C10 6.87599 9.93415 6.71702 9.81694 6.59981C9.69973 6.4826 9.54076 6.41675 9.375 6.41675C9.20924 6.41675 9.05027 6.4826 8.93306 6.59981C8.81585 6.71702 8.75 6.87599 8.75 7.04175V13.2917C8.75 13.4575 8.81585 13.6165 8.93306 13.7337C9.05027 13.8509 9.20924 13.9167 9.375 13.9167C9.54076 13.9167 9.69973 13.8509 9.81694 13.7337C9.93415 13.6165 10 13.4575 10 13.2917Z"
+                            fill="#FF0000"
+                          />
+                          <path
+                            d="M11.25 17.6667H3.75C3.25272 17.6667 2.77581 17.4692 2.42417 17.1176C2.07254 16.7659 1.875 16.289 1.875 15.7917V3.91675H3.125V15.7917C3.125 15.9575 3.19085 16.1165 3.30806 16.2337C3.42527 16.3509 3.58424 16.4167 3.75 16.4167H11.25C11.4158 16.4167 11.5747 16.3509 11.6919 16.2337C11.8092 16.1165 11.875 15.9575 11.875 15.7917V3.91675H13.125V15.7917C13.125 16.289 12.9275 16.7659 12.5758 17.1176C12.2242 17.4692 11.7473 17.6667 11.25 17.6667ZM15 3.29175C15 3.12599 14.9342 2.96702 14.8169 2.84981C14.6997 2.7326 14.5408 2.66675 14.375 2.66675H0.625C0.45924 2.66675 0.300269 2.7326 0.183058 2.84981C0.0658481 2.96702 0 3.12599 0 3.29175C0 3.45751 0.0658481 3.61648 0.183058 3.73369C0.300269 3.8509 0.45924 3.91675 0.625 3.91675H14.375C14.5408 3.91675 14.6997 3.8509 14.8169 3.73369C14.9342 3.61648 15 3.45751 15 3.29175ZM11.25 2.04175C11.25 1.54447 11.0525 1.06755 10.7008 0.715923C10.3492 0.364292 9.87228 0.166748 9.375 0.166748H5.625C5.12772 0.166748 4.65081 0.364292 4.29917 0.715923C3.94754 1.06755 3.75 1.54447 3.75 2.04175V2.66675H5V2.04175C5 1.87599 5.06585 1.71702 5.18306 1.59981C5.30027 1.4826 5.45924 1.41675 5.625 1.41675H9.375C9.54076 1.41675 9.69973 1.4826 9.81694 1.59981C9.93415 1.71702 10 1.87599 10 2.04175V2.66675H11.25V2.04175Z"
+                            fill="#FF0000"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <div class="row-count">2</div>
+                    </td>
+                    <td>
+                      <input class="d-none" id="row2-file" type="file" />
+                      <label class="add-file-icon" for="row2-file">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 12 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M6 0C5.49022 0 5.07692 0.413277 5.07692 0.923077V5.07694H0.923077C0.413277 5.07694 0 5.4902 0 6.00002C0 6.5098 0.413277 6.9231 0.923077 6.9231H5.07692V11.0769C5.07692 11.5867 5.49022 12 6 12C6.50982 12 6.92308 11.5867 6.92308 11.0769V6.9231H11.0769C11.5867 6.9231 12 6.5098 12 6.00002C12 5.4902 11.5867 5.07694 11.0769 5.07694H6.92308V0.923077C6.92308 0.413277 6.50982 0 6 0Z"
+                            fill="#6C6C6C"
+                          />
+                        </svg>
+                      </label>
+                    </td>
+
+                    <td>
+                      <input type="date" />
+                    </td>
+                    <td>
+                      <select name="" id="">
+                        <option value="">Select</option>
+                      </select>
+                    </td>
+                    <td>
+                      <select name="" id="">
+                        <option value="">Select</option>
+                      </select>
+                    </td>
+                    <td>
+                      <div class="d-flex justify-content-center">
+                        <div>
+                          <select name="" id="">
+                            <option value="">INR</option>
+                          </select>
+                        </div>
+                        <div>
+                          <input type="number" placeholder="0.00" />
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <input
+                        class="custom-checkbox"
+                        type="checkbox"
+                        id="checkbox-2"
+                      />
+                    </td>
+                    <td></td>
+                    <td>
+                      <button class="btn bg-transparent">
+                        <svg
+                          width="15"
+                          height="18"
+                          viewBox="0 0 15 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.625 13.9167C5.45924 13.9167 5.30027 13.8509 5.18306 13.7337C5.06585 13.6165 5 13.4575 5 13.2917V7.04175C5 6.87599 5.06585 6.71702 5.18306 6.59981C5.30027 6.4826 5.45924 6.41675 5.625 6.41675C5.79076 6.41675 5.94973 6.4826 6.06694 6.59981C6.18415 6.71702 6.25 6.87599 6.25 7.04175V13.2917C6.25 13.4575 6.18415 13.6165 6.06694 13.7337C5.94973 13.8509 5.79076 13.9167 5.625 13.9167ZM10 13.2917V7.04175C10 6.87599 9.93415 6.71702 9.81694 6.59981C9.69973 6.4826 9.54076 6.41675 9.375 6.41675C9.20924 6.41675 9.05027 6.4826 8.93306 6.59981C8.81585 6.71702 8.75 6.87599 8.75 7.04175V13.2917C8.75 13.4575 8.81585 13.6165 8.93306 13.7337C9.05027 13.8509 9.20924 13.9167 9.375 13.9167C9.54076 13.9167 9.69973 13.8509 9.81694 13.7337C9.93415 13.6165 10 13.4575 10 13.2917Z"
+                            fill="#FF0000"
+                          />
+                          <path
+                            d="M11.25 17.6667H3.75C3.25272 17.6667 2.77581 17.4692 2.42417 17.1176C2.07254 16.7659 1.875 16.289 1.875 15.7917V3.91675H3.125V15.7917C3.125 15.9575 3.19085 16.1165 3.30806 16.2337C3.42527 16.3509 3.58424 16.4167 3.75 16.4167H11.25C11.4158 16.4167 11.5747 16.3509 11.6919 16.2337C11.8092 16.1165 11.875 15.9575 11.875 15.7917V3.91675H13.125V15.7917C13.125 16.289 12.9275 16.7659 12.5758 17.1176C12.2242 17.4692 11.7473 17.6667 11.25 17.6667ZM15 3.29175C15 3.12599 14.9342 2.96702 14.8169 2.84981C14.6997 2.7326 14.5408 2.66675 14.375 2.66675H0.625C0.45924 2.66675 0.300269 2.7326 0.183058 2.84981C0.0658481 2.96702 0 3.12599 0 3.29175C0 3.45751 0.0658481 3.61648 0.183058 3.73369C0.300269 3.8509 0.45924 3.91675 0.625 3.91675H14.375C14.5408 3.91675 14.6997 3.8509 14.8169 3.73369C14.9342 3.61648 15 3.45751 15 3.29175ZM11.25 2.04175C11.25 1.54447 11.0525 1.06755 10.7008 0.715923C10.3492 0.364292 9.87228 0.166748 9.375 0.166748H5.625C5.12772 0.166748 4.65081 0.364292 4.29917 0.715923C3.94754 1.06755 3.75 1.54447 3.75 2.04175V2.66675H5V2.04175C5 1.87599 5.06585 1.71702 5.18306 1.59981C5.30027 1.4826 5.45924 1.41675 5.625 1.41675H9.375C9.54076 1.41675 9.69973 1.4826 9.81694 1.59981C9.93415 1.71702 10 1.87599 10 2.04175V2.66675H11.25V2.04175Z"
+                            fill="#FF0000"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-5">
+              <button class="btn text-blue">
+                <span class="me-2"
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.9723 14.9724C13.2598 16.6849 11.0152 17.5413 8.77029 17.5413C6.52591 17.5413 4.28153 16.6851 2.56877 14.9724C-0.856255 11.5473 -0.856255 5.99384 2.56877 2.56882C4.28153 0.856312 6.52591 -6.86646e-05 8.77029 -6.86646e-05C11.0152 -6.86646e-05 13.2598 0.856312 14.9723 2.56882C18.3971 5.99384 18.3971 11.5473 14.9723 14.9724ZM13.5944 7.89381H9.64733V3.94674H7.89325V7.89355H3.94669V9.64764H7.8935V13.5944H9.64758V9.64789H13.5944V7.89381Z"
+                      fill="#408DFB"
+                    />
+                  </svg> </span
+                >Add More Expense
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- end container -->
+      </section>
+      <!-- ========== section end ========== -->
+
+      <!-- ========== footer start =========== -->
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="copyright text-center">
+                <p class="text-sm">
+                  Emerald © <span id="current-year"></span> All Rights Reserved.
+                  Developed by
+                  <a
+                    href="https://brightbridge.co/"
+                    rel="nofollow"
+                    target="_blank"
+                  >
+                    BBIT
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </footer>
+      <!-- ========== footer end =========== -->
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+
+    <!-- ========= All Javascript files linkup ======== -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/Chart.min.js"></script>
+    <script src="../assets/js/dynamic-pie-chart.js"></script>
+    <script src="../assets/js/moment.min.js"></script>
+    <script src="../assets/js/fullcalendar.js"></script>
+    <script src="../assets/js/jvectormap.min.js"></script>
+    <script src="../assets/js/world-merc.js"></script>
+    <script src="../assets/js/polyfill.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <!-- Include Date Range Picker -->
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"
+    ></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $('input[name="daterange"]').daterangepicker();
+      });
+    </script>
+  </body>
+</html>

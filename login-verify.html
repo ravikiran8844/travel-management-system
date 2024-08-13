@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
+  <title>Login Verify | Emerald TMS</title>
+
+  <!-- ========== All CSS files linkup ========= -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/lineicons.css" />
+  <link rel="stylesheet" href="assets/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="assets/css/fullcalendar.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
+
+</head>
+
+<body>
+  <div class="container-fluid login-page_wrapper p-0">
+    <div class="row g-0">
+
+      <div class="col-12 col-lg-6">
+        <div id="carousel1Captions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel1Captions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel1Captions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel1Captions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="assets/images/slide-1.png"
+                class="img-fluid" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="fs-4 text-white fw-semibold">Welcome to your new dashboard</div>
+                <div class="fs-6 login_page_carousel-text fw-medium">Sign in to explore change we’ve made</div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+                <img
+                src="assets/images/slide-2.png"
+                class="img-fluid" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="fs-4 text-white fw-semibold">Welcome to your new dashboard</div>
+                <div class="fs-6 login_page_carousel-text fw-medium">Sign in to explore change we’ve made</div>
+
+              </div>
+            </div>
+            <div class="carousel-item">
+                <img
+                src="assets/images/slide-1.png"
+                class="img-fluid" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="fs-4 text-white fw-semibold">Welcome to your new dashboard</div>
+                <div class="fs-6 login_page_carousel-text fw-medium">Sign in to explore change we’ve made</div>
+
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel1Captions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel1Captions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6 m-auto p-3 ps-lg-5 d-flex justify-content-center justify-content-lg-start">
+        <div class="login-content_wrapper text-center text-lg-start">
+          <div class="mb-4">
+            <img width="120" height="80" class="img-fluid" src="assets/images/logo/logo.png" alt="logo">
+          </div>
+
+          <div class="mb-3">
+            <div class="mb-2 fs-2 text-black fw-semibold">Enter OTP</div>
+
+            <p class="mb-3">Code is sent to +91 99*** **643</p>
+
+              <hr>
+          </div>
+
+          <div class="mt-5">
+            <form action="">
+            <div class="d-flex flex-column  justify-content-center align-items-center align-items-lg-start ">
+             
+              
+                <div id="inputs" class="otp-inputs mb-4">
+                    <input class="input" type="text" inputmode="numeric" maxlength="1">
+                    <input class="input" type="text" inputmode="numeric" maxlength="1">
+                    <input class="input" type="text" inputmode="numeric" maxlength="1">
+                    <input class="input" type="text" inputmode="numeric" maxlength="1">
+                </div>
+  
+  
+  
+              
+                <button class="btn login-button px-4">Continue</button>
+
+
+              </div>
+            </form>
+
+            <p class="my-3">Don’t received code?  <span class="fw-semibold text-orange">Resend</span></p>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========= All Javascript files linkup ======== -->
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/Chart.min.js"></script>
+  <script src="assets/js/dynamic-pie-chart.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script src="assets/js/fullcalendar.js"></script>
+  <script src="assets/js/jvectormap.min.js"></script>
+  <script src="assets/js/world-merc.js"></script>
+  <script src="assets/js/polyfill.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    const inputs = document.getElementById("inputs");
+
+inputs.addEventListener("input", function (e) {
+  const target = e.target;
+  const val = target.value;
+
+  if (isNaN(val)) {
+      target.value = "";
+      return;
+  }
+
+  if (val != "") {
+      const next = target.nextElementSibling;
+      if (next) {
+          next.focus();
+      }
+  }
+});
+
+inputs.addEventListener("keyup", function (e) {
+  const target = e.target;
+  const key = e.key.toLowerCase();
+
+  if (key == "backspace" || key == "delete") {
+      target.value = "";
+      const prev = target.previousElementSibling;
+      if (prev) {
+          prev.focus();
+      }
+      return;
+  }
+});
+</script>
+</body>
+
+</html>
