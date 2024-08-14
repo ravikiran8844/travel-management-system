@@ -110,7 +110,11 @@
               </div>
             </form>
 
-            <p class="my-3">Don’t received code?  <span class="fw-semibold text-orange">Resend</span></p>
+            <p class="my-3">Don’t received code?  
+              <span id="resendLinkContainer">
+                <a href="#" class="text-warning text-decoration-none fw-semibold"
+                  onclick="restartTimer()">Resend</a></span>
+            </p>
 
           </div>
 
@@ -122,14 +126,7 @@
 
   <!-- ========= All Javascript files linkup ======== -->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/Chart.min.js"></script>
-  <script src="assets/js/dynamic-pie-chart.js"></script>
-  <script src="assets/js/moment.min.js"></script>
-  <script src="assets/js/fullcalendar.js"></script>
-  <script src="assets/js/jvectormap.min.js"></script>
-  <script src="assets/js/world-merc.js"></script>
-  <script src="assets/js/polyfill.js"></script>
-  <script src="assets/js/main.js"></script>
+
 
   <script>
     const inputs = document.getElementById("inputs");
@@ -164,6 +161,62 @@ inputs.addEventListener("keyup", function (e) {
       return;
   }
 });
+</script>
+
+
+
+<script>
+  // Set the initial timer value to 5 minutes (300 seconds)
+  let timerSeconds = 30;
+
+// Function to update the timer text
+function updateTimerText() {
+  // Calculate minutes and seconds
+  const minutes = Math.floor(timerSeconds / 60);
+  const seconds = timerSeconds % 60;
+
+  // Format the timer values to display leading zero if needed
+  const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+  document.getElementById('resendLinkContainer').innerHTML =
+    `Resend in <span class="text-warning">${formattedMinutes}:${formattedSeconds}</span>`;
+}
+
+// Function to handle the countdown and show the "Resend" text element
+function startResendTimer() {
+  // Update the timer text initially
+  updateTimerText();
+
+  // Decrement the timer every second
+  const timerInterval = setInterval(() => {
+    timerSeconds--;
+
+    // Update the timer text
+    updateTimerText();
+
+    // If the timer reaches 0, show the "Resend" text element and clear the interval
+    if (timerSeconds === 0) {
+      clearInterval(timerInterval);
+      showResendText();
+    }
+  }, 1000);
+}
+
+// Function to show the "Resend" text element
+function showResendText() {
+  const resendLinkContainer = document.getElementById('resendLinkContainer');
+  resendLinkContainer.innerHTML = '<a href="#" class="resend-otp-text" onclick="restartTimer()">Resend</a>';
+}
+
+// Function to restart the timer
+function restartTimer() {
+  // Reset the timerSeconds value to 5 minutes (300 seconds)
+  timerSeconds = 30;
+  // Start the timer again
+  startResendTimer();
+}
+
 </script>
 </body>
 

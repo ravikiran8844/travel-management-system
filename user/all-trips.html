@@ -48,10 +48,10 @@
                 </li>
 
 
-                <li class="nav-item nav-item-has-children active">
+                <li class="nav-item nav-item-has-children">
                   <a href="#0" class="collapsed" data-bs-toggle="collapse"
                             data-bs-target="#ddmenu_1"
-                            aria-controls="ddmenu_1" aria-expanded="false"
+                            aria-controls="ddmenu_1" aria-expanded="true"
                             aria-label="Toggle navigation">
                             <span class="icon">
                                
@@ -59,7 +59,7 @@
                             </span>
                             <span class="text">Trips</span>
                         </a>
-                    <ul id="ddmenu_1" class="collapse dropdown-nav">
+                    <ul id="ddmenu_1" class="collapse show dropdown-nav">
                         <li>
                             <a href="/user/new-trips.html"> New Trips </a>
                         </li>
@@ -391,13 +391,27 @@
                 </div>
                 <!-- ========== title-wrapper end ========== -->
 
-                <!-- End Row -->
+                <div class="col-12 mb-4 d-flex justify-content-between align-items-end flex-wrap gap-4">
+                    <div>
+                        <input class="form-control" type="search" placeholder="Search Trips" name="" id="">
+                    </div>
+                    <div class="d-flex flex-wrap flex-sm-nowrap gap-2 align-items-center">
+                        <div style=" width: -webkit-fill-available; ">Trip Filter</div>
+                        <select class="form-select select-input" name="" id="">
+                            <option value="all">All</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+
+                        </select>
+                    </div>
+                </div>
 
          
                 <div class="row">
                     <div class="col-12">
                         <div class="table-responsive">
-                            <table class="table tms-table text-center">
+                            <table class="table table-hover tms-table text-center">
                                 <thead>
                                 <tr>
                                     <th>Trip ID</th>
@@ -415,7 +429,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr onclick="window.location='/user/trip-details-approved.html';">
                                         <td>TRIP-00014</td>
                                         <td>
                                             <div class="text-blue">
@@ -449,13 +463,13 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <a class="btn btn-dark" href="">Download</a>
+                                                <a class="btn btn-dark" href="/user/trip-details-approved.html">Download</a>
                                             </div>
                                         </td>
                                       
                                     </tr>
 
-                                    <tr>
+                                    <tr  onclick="window.location='/user/trip-details-pending.html';">
                                         <td>TRIP-00029</td>
                                         <td>
                                             <div class="text-blue">
@@ -496,7 +510,7 @@
                                     </tr>
 
 
-                                    <tr>
+                                    <tr  onclick="window.location='#';">
                                         <td>TRIP-00001</td>
                                         <td>
                                             <div class="text-blue">

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="../assets/images/favicon.svg" type="image/x-icon" />
-    <title>All Expenses | Emerald TMS</title>
+    <title>All New Advance | Emerald TMS</title>
 
     <!-- ========== All CSS files linkup ========= -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
@@ -380,174 +380,88 @@
                 <!-- ========== title-wrapper start ========== -->
                 <div class="title-wrapper pt-30">
                     <div class="mb-4">
-                        <h2>All Expenses</h2>
+                        <h2>Add New Advances </h2>
                     </div>
-
-                    <div class="row align-items-center">
-                        <div
-                            class="col-12 d-flex justify-content-between align-items-center gap-5 mb-4 flex-wrap">
-                            
-                            <ul class="nav nav-pills custom-nav-pills" id="pills-tab" role="tablist">
-                                <li class="nav-item ms-0" role="presentation">
-                                  <button class="nav-link active" id="pills-request-expenses-tab" data-bs-toggle="pill" data-bs-target="#pills-request-expenses" type="button" role="tab" aria-controls="pills-request-expenses" aria-selected="true">All Request Expenses</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                  <button class="nav-link" id="pills-request-advances-tab" data-bs-toggle="pill" data-bs-target="#pills-request-advances" type="button" role="tab" aria-controls="pills-request-advances" aria-selected="false">All Request Advances</button>
-                                </li>
-                              </ul>
-
-                            <div class="right d-flex gap-2">
-
-                                <div>
-                                    <button id="filter-toggle-btn" class="btn  btn-outline">
-                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.136433 1.23512L6.02142 8.98489V14.6519C6.02142 14.8214 6.11829 14.9667 6.23938 15.0636L9.2182 16.9284C9.29085 16.9768 9.38772 17.0011 9.4846 17.0011C9.55725 17.0011 9.65412 16.9768 9.72678 16.9284C9.87208 16.8315 9.96896 16.6862 9.96896 16.5167V8.98489L15.8539 1.23512L15.8782 1.2109C16.0235 0.968722 16.0477 0.653887 15.9024 0.411707C15.7571 0.169526 15.4907 0 15.2243 0H0.766102C0.475486 0 0.209087 0.145308 0.087997 0.411707C-0.0330932 0.678105 -0.0330931 0.968722 0.112215 1.2109C0.112215 1.2109 0.112215 1.2109 0.136433 1.23512ZM14.8126 0.968722L9.09711 8.54897C9.02445 8.62162 9.00023 8.74271 9.00023 8.83958V15.6449L6.99014 14.3855V8.83958C6.99014 8.74271 6.96592 8.62162 6.89327 8.54897L1.15359 0.968722H14.8126Z" fill="#313131"/>
-                                            </svg>
-                                            
-                                    </button>
-                                </div>
-
-                                
-                            </div>
-                        </div>
-
-                        <!-- end col -->
-                    </div>
-                    <!-- end row -->
                 </div>
                 <!-- ========== title-wrapper end ========== -->
 
 
-                <div class="col-12">
-
-                    <div class="mb-4 filter-card_wrapper">
-                        <div class="d-flex flex-wrap gap-4">
-
-                            <div class="filter-icon">
-                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.136433 1.23512L6.02142 8.98489V14.6519C6.02142 14.8214 6.11829 14.9667 6.23938 15.0636L9.2182 16.9284C9.29085 16.9768 9.38772 17.0011 9.4846 17.0011C9.55725 17.0011 9.65412 16.9768 9.72678 16.9284C9.87208 16.8315 9.96896 16.6862 9.96896 16.5167V8.98489L15.8539 1.23512L15.8782 1.2109C16.0235 0.968722 16.0477 0.653887 15.9024 0.411707C15.7571 0.169526 15.4907 0 15.2243 0H0.766102C0.475486 0 0.209087 0.145308 0.087997 0.411707C-0.0330932 0.678105 -0.0330931 0.968722 0.112215 1.2109C0.112215 1.2109 0.112215 1.2109 0.136433 1.23512ZM14.8126 0.968722L9.09711 8.54897C9.02445 8.62162 9.00023 8.74271 9.00023 8.83958V15.6449L6.99014 14.3855V8.83958C6.99014 8.74271 6.96592 8.62162 6.89327 8.54897L1.15359 0.968722H14.8126Z" fill="white"/>
-                                    </svg>                                    
-                            </div>
-                            
-            
-                            <div>
-                                <div class="date-range_wrapper">
-                                    <label for="">Date</label>
-                                    <input type="text" name="daterange">
-                                </div>
-                            </div>
-
-
-                            <div class="select_box">
-
-                                <div>
-                                    <label>Category</label>
-                                </div>
-                                <div >
-                                    <select name="" id="">
-                                        <option value="">Select</option>
-                                        <option value="1">option 1</option>
-                                    </select>
-                                </div>
-            
-                            </div>
-            
-                           </div>
-                    </div>
-
-
-                    
-                    <div class="tab-content pt-4" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-request-expenses" role="tabpanel" aria-labelledby="pills-request-expenses-tab" tabindex="0">
-
-                            <div class="table-responsive">
-                                <table class="table tms-table">
-                                    <thead>
-                                        <th>Expense Details</th>
-                                        <th>Trip Id</th>
-                                        <th>Total Amount</th>
-                                        <th>reimbursable Amount</th>
-                                        <th>Status</th>
-                                        <th>Approval</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <div>
-                                                        <input class="form-check" type="checkbox" name="" id="">
-                                                    </div>
-                                                    <div>
-                                                        <div>12 July - 13 July, 2024</div>
-                                                        <div class="text-blue">Food and Transport Expenses</div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <div>TRIP-00014</div>
-                                                    <div class="body-light-text">Chennai</div>
-                                                </div>
-                                            </td>
-                                            <td>₹30,000.00</td>
-                                            <td>₹10,000.00</td>
-                                            <td>
-                                                <div class="badge approved">SUBMITTED</div>
-                                            </td>
-                                            <td>
-                                                <div class="badge pending">Pending</div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="pills-request-advances" role="tabpanel" aria-labelledby="pills-request-advances-tab" tabindex="0">
-                            <div class="table-responsive">
-                                <table class="table tms-table">
-                                    <thead>
-                                        <th>REQUESTED DATE</th>
-                                        <th>Trip Id</th>
-                                        <th>AMOUNT</th>
-                                        <th>NOTES</th>
-                                        <th>Status</th>
-                                        <th>Approval</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-blue">
-                                                11 July 2024
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <div>TRIP-00014</div>
-                                                    <div class="body-light-text">Chennai</div>
-                                                </div>
-                                            </td>
-                                            <td class="text-dark fw-medium">Rs.5,000.00</td>
-                                            <td>Reason for  Advance request..</td>
-                                            <td>
-                                                <div class="badge pending">pending</div>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="image me-2">
-                                                        <img class="rounded-5" width="30" height="30" src="../assets/images/profile/profile-image.png" alt="">
-                                                    </div>
-                                               
-                                                    <p>Vinoth Kumar</p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        
+             <div class="row">
+                <div class="col-12 add-new-advances__wrapper">
+                    <div>
+                        <label>Purpose of Trip</label>
+                        <input class="form-control" type="text">
                       </div>
-                    <!-- end card -->
+
+
+                      <div>
+                        <label>Trip ID<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text">
+                      </div>
+                     
+
+                      <div>
+                        <label>Journey Date</label>
+                        <input class="form-control" type="date">
+                      </div>
+    
+                     
+                     <div>
+                        <label>Requesting Amount<span class="text-danger">*</span></label>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <select class="form-select">
+                                    <option value="inr">INR</option>
+                                    <option value="usd">USD</option>
+                                    <!-- Add more currency options as needed -->
+                                </select>
+                            </div>
+                            <input type="number" class="form-control" placeholder="0.00">
+                        </div>
+                     </div>
+    
+    
+                
+                   
+    
+    
+                    <div>
+                        <label>Paid Through<span class="text-danger">*</span></label>
+                        <div>
+                          <select class="form-select">
+                            <option disabled="" value="">Select</option>
+                            <option value="">Petty Cash</option>
+                            <option value="">Paypal</option>
+                            <option value="">Razorpay</option>
+                          </select>
+                        </div>
+                      </div>
+    
+
+    
+    
+                      <div>
+                        <label>Notes<span class="text-danger">*</span></label>
+                       <div>
+                        <textarea class="form-control" name="" id=""></textarea>
+                       </div>
+                      </div>
+    
+    
+    
+
+                      <div class="d-flex justify-content-end gap-3">
+                        <button class="btn btn-warning text-white px-4">Request Advance</button>
+                        <button class="btn btn-outline-dark px-4">Cancel</button>
+
+                      </div>
+    
+    
+                      
+    
                 </div>
+             </div>
 
             </div>
             <!-- end container -->
@@ -598,28 +512,6 @@
 
 
 
-
-    <script>
-        $(document).ready(function () {
-            $('#myTable').DataTable();
-        });
-    </script>
-
-
-    <script type="text/javascript">
-    $(function() {
-        $('input[name="daterange"]').daterangepicker();
-    });
-    </script>
-
-    <script>
-        $(function(){
-            $("#filter-toggle-btn").click(function(){
-                $(".filter-card_wrapper").toggle();
-                console.log("toggle")
-            })
-        })
-    </script>
 
 </body>
 

@@ -86,6 +86,10 @@
   line-height: 100%; /* 16px */
   margin-right: 10px;
 }
+.resend-otp-text,#resendLinkContainer .text-warning{
+  color: #f78d1e;
+  font-weight: 600;
+}
 
 /* admin dashboard */
 /* .dashboard-cards {
@@ -1054,7 +1058,169 @@ background: #FFF;
   background: #F1F2F6;
   position: sticky;
   top: 0;
+  text-transform: uppercase;
 }
 .tms-table th,.tms-table td{
   color: #2D2D2D;
+}
+.btn-icon{
+  border: 0.9px solid #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+}
+.tms-sidebar_grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  min-height: 100vh;
+  gap: 30px;
+}
+@media (min-width:992px) {
+  .tms-sidebar_grid{
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    height: 100%;
+    min-height: 100vh;
+    gap: 30px;
+  }
+}
+/* .tms-sidebar_grid__main-content{
+
+} */
+.tms-sidebar_grid__main-content--header{
+  border-top: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+  padding: 15px 0px;
+}
+.tms-sidebar{
+  border-top: 1px solid #ECECEC;
+  background: #F1F2F6;
+}
+.tms-sidebar .card{
+  max-width: 260px;
+
+}
+.body-light-text{
+  color: #7C7C7C;
+}
+.tms-sidebar_grid__download-card{
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 180px;
+    width: 100%;
+    height: 90px;
+    /* background-color: #F1F2F6; */
+    /* background-size:cover;
+    background-repeat: no-repeat; */
+    /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='152' height='68' viewBox='0 0 152 68' fill='none'%3E%3Cpath d='M39.2495 58.7859C40.4109 58.7844 41.5611 59.0118 42.6345 59.4552C43.7079 59.8986 44.6833 60.5492 45.505 61.3698C46.3267 62.1905 46.9786 63.165 47.4234 64.2378C47.8682 65.3106 48.0971 66.4605 48.0971 67.6218L141.937 67.6218C144.311 67.6208 146.588 66.677 148.266 64.9979C149.945 63.3189 150.888 61.0419 150.888 58.6679L150.888 9.93875C150.884 7.5673 149.939 5.29431 148.261 3.61852C146.583 1.94272 144.309 1.001 141.937 1L48.0971 0.999996C48.0971 3.34344 47.1662 5.5909 45.5091 7.24796C43.852 8.90503 41.6044 9.83595 39.2609 9.83595C36.9174 9.83595 34.6699 8.90503 33.0128 7.24796C31.3557 5.5909 30.4248 3.34344 30.4248 0.999995L9.95039 0.999994C8.77501 0.999994 7.61113 1.2315 6.52522 1.68128C5.43932 2.13107 4.45264 2.79034 3.62152 3.62144C2.79039 4.45254 2.1311 5.4392 1.6813 6.52508C1.23151 7.61096 1 8.77481 1 9.95016L0.999997 58.6793C1.00201 61.0497 1.94432 63.3225 3.62016 64.9991C5.29599 66.6756 7.56848 67.6188 9.93896 67.6218L30.4133 67.6218C30.4133 65.2784 31.3443 63.0309 33.0014 61.3739C34.6585 59.7168 36.906 58.7859 39.2495 58.7859Z' fill='%23F1F2F6' stroke='%23DADADA' stroke-width='0.757066'/%3E%3C/svg%3E"); */
+}
+
+.trip-details-card{
+  border-radius: 4px;
+border: 1px solid #DADADA;
+background: #F1F2F6;
+}
+
+.trip-details-card__overlay{
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  color: #fff;
+  background: #000;
+  padding: 0px 10px;
+  border-radius: 6px
+}
+textarea{
+  resize: none;
+}
+textarea.remarks{
+  height: 150px;
+}
+.badge.pending{
+  background: #FEF4E8;
+  color: #F78D1E;
+}
+
+
+.unplanned-trips_tabs .tab {
+  display: none;
+}
+.unplanned-trips_tabs .inputs-wrapper{
+  border-radius: 23.58px;
+border: 1.072px solid #ECECEC;
+width: fit-content;
+flex-shrink: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+padding: 10px;
+}
+
+.select-input{
+  border-radius: 3.6px;
+  border: 0.9px solid #2D2D2D;
+  min-width: 200px;
+  --bs-form-select-bg-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='11' viewBox='0 0 16 11' fill='none'%3E%3Cpath d='M0 0.77131C0 0.345331 0.358176 0 0.8 0H15.2C15.6418 0 16 0.345331 16 0.77131C16 1.19729 15.6418 1.54262 15.2 1.54262H0.8C0.358176 1.54262 0 1.19729 0 0.77131Z' fill='%23919191'/%3E%3Cpath d='M2.40039 5.39924C2.40039 4.97325 2.75857 4.62793 3.20039 4.62793H12.8004C13.2422 4.62793 13.6004 4.97325 13.6004 5.39924C13.6004 5.82523 13.2422 6.17055 12.8004 6.17055H3.20039C2.75857 6.17055 2.40039 5.82523 2.40039 5.39924Z' fill='%23919191'/%3E%3Cpath d='M5.5998 9.25586C5.15798 9.25586 4.7998 9.60117 4.7998 10.0272C4.7998 10.4532 5.15798 10.7985 5.5998 10.7985H10.3998C10.8416 10.7985 11.1998 10.4532 11.1998 10.0272C11.1998 9.60117 10.8416 9.25586 10.3998 9.25586H5.5998Z' fill='%23919191'/%3E%3C/svg%3E");
+
+}
+.select-input:focus{
+  border-color: #F78D1E !important;
+  border: 1px solid;
+  box-shadow: none;
+  --bs-form-select-bg-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='11' viewBox='0 0 16 11' fill='none'%3E%3Cpath d='M0 0.77131C0 0.345331 0.358176 0 0.8 0H15.2C15.6418 0 16 0.345331 16 0.77131C16 1.19729 15.6418 1.54262 15.2 1.54262H0.8C0.358176 1.54262 0 1.19729 0 0.77131Z' fill='%23F78D1E'/%3E%3Cpath d='M2.40039 5.39924C2.40039 4.97325 2.75857 4.62793 3.20039 4.62793H12.8004C13.2422 4.62793 13.6004 4.97325 13.6004 5.39924C13.6004 5.82523 13.2422 6.17055 12.8004 6.17055H3.20039C2.75857 6.17055 2.40039 5.82523 2.40039 5.39924Z' fill='%23F78D1E'/%3E%3Cpath d='M5.5998 9.25586C5.15798 9.25586 4.7998 9.60117 4.7998 10.0272C4.7998 10.4532 5.15798 10.7985 5.5998 10.7985H10.3998C10.8416 10.7985 11.1998 10.4532 11.1998 10.0272C11.1998 9.60117 10.8416 9.25586 10.3998 9.25586H5.5998Z' fill='%23F78D1E'/%3E%3C/svg%3E");
+}
+
+.nav-pills.custom-nav-pills .nav-link{
+  color: #2D2D2D;
+  border-radius: 4px;
+  border: 1px solid #DADADA;
+  background: #F1F2F6;
+}
+.nav-pills.custom-nav-pills .nav-link.active, .nav-pills.custom-nav-pills .show>.nav-link{
+  border-radius: 4px;
+border: 1px solid #DADADA;
+background: #2D2D2D;
+color: #F78D1E;
+
+
+}
+.add-new-advances__wrapper{
+ max-width: 400px;
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+}
+.add-new-advances__wrapper input,.add-new-advances__wrapper select{
+  height: 40px;
+  border-radius: 4px;
+border: 1.5px solid #ECECEC;
+background: #FFF;
+}
+.add-new-advances__wrapper textarea{
+  height: 100px;
+  resize: none;
+  width: 100%;
+  border-radius: 4px;
+  border: 1.5px solid #ECECEC;
+  background: #FFF;
+}
+.add-new-advances__wrapper input:focus,.add-new-advances__wrapper select:focus,.add-new-advances__wrapper textarea:focus{
+  box-shadow: none;
+  border-color: #ECECEC;
+
+}
+.add-new-advances__wrapper  label{
+  color: #6C6C6C;
+  margin-bottom: 5px;
 }
