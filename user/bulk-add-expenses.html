@@ -239,224 +239,166 @@
             <div class="col-lg-5 col-md-5 col-6">
               <div class="header-left d-flex align-items-center">
                 <div class="menu-toggle-btn mr-15">
-                  <button
-                    id="menu-toggle"
-                    class="main-btn primary-btn btn-hover"
-                  >
-                    <i class="lni lni-chevron-left"></i>
+                  <button id="menu-toggle"
+                    class="main-btn primary-btn btn-hover">
+                    <i class="lni lni-chevron-left d-none d-lg-block"></i>
+                    <i class="lni lni-menu d-block d-lg-none"></i>
                   </button>
                 </div>
-                <div class="header-search d-none d-lg-flex">
+                <!-- <div class="header-search d-none d-lg-flex">
                   <form action="#">
                     <input type="text" placeholder="Search Reports Approval" />
                     <button><i class="lni lni-search-alt"></i></button>
                   </form>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="col-lg-7 col-md-7 col-6">
               <div class="header-right">
                 <!-- message start -->
-                <div class="header-message-box ml-15 d-none d-md-flex">
-                  <button
-                    class="dropdown-toggle"
-                    type="button"
-                    id="message"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <svg
-                      width="22"
-                      height="22"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                    >
-                      <title>message-outline</title>
-                      <path
-                        d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M20 16H5.2L4 17.2V4H20V16Z"
-                      />
-                    </svg>
+                <div class="header-message-box" id="message-box">
+                  <button class="message-button" type="button" id="message-toggle">
+                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>message-outline</title><path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M20 16H5.2L4 17.2V4H20V16Z"/></svg>
                     <span>3</span>
                   </button>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="message"
-                  >
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="../assets/images/lead/lead-5.png" alt="" />
+                  <div class="dropdown-menu" id="dropdown-menu">
+                    <div class="px-4 py-3">
+                      <div class="d-flex justify-content-between gap-4">
+                        <div class="fs-5 fw-semibold">
+                          Messages
                         </div>
-                        <div class="content">
-                          <h6>Jacob Jones</h6>
-                          <p>Hey!I can across your profile and ...</p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="../assets/images/lead/lead-3.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>John Doe</h6>
-                          <p>Would you mind please checking out</p>
-                          <span>12 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="../assets/images/lead/lead-2.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>Anee Lee</h6>
-                          <p>Hey! are you available for freelance?</p>
-                          <span>1h ago</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
+                        <div class="text-warning">Mark all as read</div>
+                      </div>
+                  
+                      
+                    </div>
+                    <ul class="message-list">
+                      <li class="unread">
+                        <a href="#">
+                          <div class="image">
+                            <img src="../assets/images/lead/lead-5.png" alt="">
+                          </div>
+                          <div class="content">
+                            <h6>Jacob Jones</h6>
+                            <p>Hey! I came across your profile and ...</p>
+                            <span>10 mins ago</span>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="read">
+                        <a href="#">
+                          <div class="image">
+                            <img src="../assets/images/lead/lead-5.png" alt="">
+                          </div>
+                          <div class="content">
+                            <h6>Jacob Jones</h6>
+                            <p>Hey! I came across your profile and ...</p>
+                            <span>10 mins ago</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <!-- message end -->
 
                 <!-- notification start -->
-                <div class="notification-box d-none d-md-flex">
-                  <button
-                    class="dropdown-toggle"
-                    type="button"
-                    id="notification"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <svg
-                      width="22"
-                      height="22"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                    >
-                      <title>bell-outline</title>
-                      <path
-                        d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z"
-                      />
-                    </svg>
+                <div class="notification-box" id="notification-box">
+                  <button class="notification-button" type="button" id="notification-toggle">
+                    <svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>bell-outline</title><path d="M10 21H14C14 22.1 13.1 23 12 23S10 22.1 10 21M21 19V20H3V19L5 17V11C5 7.9 7 5.2 10 4.3V4C10 2.9 10.9 2 12 2S14 2.9 14 4V4.3C17 5.2 19 7.9 19 11V17L21 19M17 11C17 8.2 14.8 6 12 6S7 8.2 7 11V18H17V11Z"/></svg>
                     <span>2</span>
                   </button>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="notification"
-                  >
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="../assets/images/lead/lead-6.png" alt="" />
+                  <div class="dropdown-menu" id="notification-dropdown">
+                    <div class="px-4 pt-3">
+                      <div class="d-flex justify-content-between gap-4">
+                        <div class="fs-5 fw-semibold">
+                          Notifications
                         </div>
-                        <div class="content">
-                          <h6>
-                            John Doe
-                            <span class="text-regular">
-                              comment on a product.
-                            </span>
-                          </h6>
-                          <p>
-                            Lorem ipsum dolor sit amet, consect etur adipiscing
-                            elit Vivamus tortor.
-                          </p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="../assets/images/lead/lead-1.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>
-                            Jonathon
-                            <span class="text-regular">
-                              like on a product.
-                            </span>
-                          </h6>
-                          <p>
-                            Lorem ipsum dolor sit amet, consect etur adipiscing
-                            elit Vivamus tortor.
-                          </p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
+                        <div class="text-warning">Mark all as read</div>
+                      </div>
+                      <div class="notifications-tab mt-2">
+                        All <span class="notifications-tab__count">2</span>
+                      </div>
+                      
+                    </div>
+
+                    <ul class="notification-list">
+                      <li class="unread">
+                        <a href="#0">
+                          <div class="image">
+                            <img src="../assets/images/lead/lead-5.png" alt="Notification Image">
+                          </div>
+                          <div class="content">
+                            <div><b>Vinoth Kumar</b> wants to send a Trip Request</div>
+                            <div>Trip ID: <b>TRIP-00014</b></div>
+                            <span>10 mins ago</span>
+                            <div class="action-buttons d-flex gap-2">
+                              <button class="approve-btn">Approve</button>
+                              <button class="reject-btn">Reject</button>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="read">
+                        <a href="#0">
+                          <div class="image">
+                            <img src="../assets/images/lead/lead-5.png" alt="Notification Image">
+                          </div>
+                          <div class="content">
+                            <div><b>Vivin</b> wants to send a Trip Request</div>
+                            <div>Trip ID: <b>TRIP-00014</b></div>
+                            <span>20 mins ago</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <!-- notification end -->
 
-                <div
-                  class="align-self-center ml-15 header-border d-none d-md-flex"
-                >
-                  <div class="header_company-name">
-                    Company name
-                    <span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="6"
-                        height="10"
-                        viewBox="0 0 6 10"
-                        fill="none"
-                      >
+                <!-- <div
+                  class="align-self-center ml-15 header-border d-none d-md-flex">
+                  <div class="header_company-name">Company name <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="6"
+                        height="10" viewBox="0 0 6 10" fill="none">
                         <path
                           d="M5.64055 5.91202C5.75049 5.81567 5.8412 5.68135 5.90409 5.52177C5.96699 5.36218 6 5.1826 6 5C6 4.8174 5.96699 4.63782 5.90409 4.47823C5.8412 4.31865 5.75049 4.18433 5.64055 4.08798L1.16739 0.162835C1.05208 0.0615387 0.919721 0.00545975 0.78394 0.000379528C0.648159 -0.00469974 0.513875 0.0414037 0.39493 0.133937C0.275986 0.22647 0.176685 0.362085 0.107265 0.526802C0.0378447 0.691518 0.000817343 0.879375 -3.90299e-07 1.07101L-4.68151e-08 8.929C0.000817703 9.12063 0.0378451 9.30848 0.107265 9.4732C0.176685 9.63792 0.275986 9.77353 0.394931 9.86606C0.513875 9.9586 0.64816 10.0047 0.78394 9.99962C0.919721 9.99454 1.05208 9.93846 1.16739 9.83717L5.64055 5.91202Z"
-                          fill="#313131"
-                        />
+                          fill="#313131" />
                       </svg>
-                    </span>
-                  </div>
-                </div>
+                    </span></div>
+                </div> -->
 
                 <!-- profile start -->
-                <div class="profile-box ml-15">
-                  <button
-                    class="dropdown-toggle bg-transparent border-0"
-                    type="button"
-                    id="profile"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                <div class="profile-box ml-15 header-border border-end-0 pe-0">
+                  <button class="dropdown-toggle bg-transparent border-0"
+                    type="button" id="profile"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     <div class="profile-info">
                       <div class="info">
-                        <div class="image">
-                          <img
-                            src="../assets/images/profile/profile-image.png"
-                            alt=""
-                          />
+                        <div class="image me-0 pe-0">
+                          <img src="../assets/images/profile/profile-image.png"
+                            alt />
                         </div>
-                        <div>
+                        <div class="d-none d-md-block ms-2">
                           <h6 class="fw-semibold">Vishnu prasath</h6>
                           <p>Admin</p>
                         </div>
                       </div>
                     </div>
                   </button>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="profile"
-                  >
+                  <ul class="dropdown-menu dropdown-menu-end"
+                    aria-labelledby="profile">
                     <li>
                       <div class="author-info flex items-center !p-1">
                         <div class="image">
-                          <img
-                            src="../assets/images/profile/profile-image.png"
-                            alt="image"
-                          />
+                          <img src="../assets/images/profile/profile-image.png"
+                            alt="image">
                         </div>
                         <div class="content">
                           <h4 class="text-sm">Vishnu prasath</h4>
                           <a
                             class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
-                            href="#"
-                            >email@gmail.com</a
-                          >
+                            href="#">email@gmail.com</a>
                         </div>
                       </div>
                     </li>

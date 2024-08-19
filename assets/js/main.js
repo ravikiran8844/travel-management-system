@@ -52,7 +52,29 @@
   });
 })();
 
+document.getElementById('message-toggle').addEventListener('click', function() {
+  var dropdownMenu = document.getElementById('dropdown-menu');
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
 
+document.addEventListener('click', function(event) {
+  var isClickInside = document.getElementById('message-box').contains(event.target);
+  if (!isClickInside) {
+    document.getElementById('dropdown-menu').style.display = 'none';
+  }
+});
+
+document.getElementById('notification-toggle').addEventListener('click', function() {
+  var dropdownMenu = document.getElementById('notification-dropdown');
+  dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+document.addEventListener('click', function(event) {
+  var isClickInside = document.getElementById('notification-box').contains(event.target);
+  if (!isClickInside) {
+    document.getElementById('notification-dropdown').style.display = 'none';
+  }
+});
 
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
